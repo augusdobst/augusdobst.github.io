@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>91次网_视频创作社区_短剧与纪录片频道</title>
+<meta name="description" content="91次网是一个面向视频创作者的社区与内容频道，汇集短剧、纪录片、播客、Vlog 等具体条目与更新动态，提供分类筛选、深度解析、体验指南与社区评论，适合想找可消费内容和创作参考的观众与创作者。" />
+<meta name="keywords" content="短剧频道,纪录片片单,Vlog创作,播客节目,视频社区" />
+<style>
+:root{
+  --ink:#12161d;
+  --ink-2:#2a3240;
+  --muted:#5b6675;
+  --line:#e2e6ec;
+  --line-strong:#c9d0da;
+  --bg:#f6f7f9;
+  --panel:#ffffff;
+  --brand:#1f6feb;
+  --brand-deep:#0f4bb3;
+  --brand-soft:#e8f0fe;
+  --accent:#e8590c;
+  --accent-soft:#fdefe4;
+  --green:#0f8a5f;
+  --green-soft:#e4f5ee;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 1px 2px rgba(18,22,29,.05),0 6px 18px rgba(18,22,29,.06);
+  --shadow-sm:0 1px 2px rgba(18,22,29,.06);
+  --max:1320px;
+  --sticky:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px;line-height:1.72;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+section[id],div[id]{scroll-margin-top:var(--sticky)}
+
+/* ---------- 吸顶公告条 ---------- */
+.notice{
+  background:linear-gradient(90deg,#0f4bb3,#1f6feb 55%,#2f86f6);
+  color:#fff;font-size:13px;
+}
+.notice-in{
+  max-width:var(--max);margin:0 auto;padding:7px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.notice b{font-weight:700;background:rgba(255,255,255,.18);padding:1px 8px;border-radius:20px;font-size:12px;letter-spacing:.04em}
+.notice span{opacity:.94}
+.notice a{margin-left:auto;text-decoration:underline;text-underline-offset:3px;opacity:.95;white-space:nowrap}
+
+/* ---------- 页头 ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{
+  max-width:var(--max);margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:18px;min-height:64px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo-mark{width:34px;height:34px;flex:0 0 auto}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:-.02em}
+.logo-text small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.16em;line-height:1.2;margin-top:1px}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;flex:1 1 auto}
+nav.main a{
+  padding:7px 11px;border-radius:var(--radius-sm);font-size:14px;color:var(--ink-2);
+  white-space:nowrap;transition:.15s;
+}
+nav.main a:hover{background:var(--brand-soft);color:var(--brand-deep)}
+.search{
+  display:flex;align-items:center;gap:6px;background:var(--bg);
+  border:1px solid var(--line-strong);border-radius:999px;padding:4px 4px 4px 12px;
+  flex:0 1 260px;
+}
+.search input{
+  border:0;background:transparent;outline:none;font-size:13.5px;width:100%;min-width:0;padding:4px 0;
+}
+.search button{
+  border:0;background:var(--brand);color:#fff;border-radius:999px;
+  padding:6px 14px;font-size:13px;font-weight:600;
+}
+.search button:hover{background:var(--brand-deep)}
+.search-status{font-size:12.5px;color:var(--muted);padding:6px 20px 0;max-width:var(--max);margin:0 auto;display:none}
+.search-status.on{display:block}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;border-radius:999px;
+  padding:9px 18px;font-size:14px;font-weight:600;border:1px solid transparent;transition:.16s;
+}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-deep)}
+.btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep)}
+.head-cta{display:flex;gap:8px;flex:0 0 auto}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  background:
+    radial-gradient(900px 420px at 12% -10%,#e8f0fe 0%,rgba(232,240,254,0) 65%),
+    radial-gradient(700px 400px at 92% 0%,#fdefe4 0%,rgba(253,239,228,0) 60%),
+    #fff;
+  border-bottom:1px solid var(--line);
+}
+.hero-in{
+  max-width:var(--max);margin:0 auto;padding:44px 20px 48px;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  color:var(--brand-deep);background:var(--brand-soft);border-radius:999px;padding:5px 13px;letter-spacing:.02em;
+}
+.hero h1{font-size:clamp(34px,4.4vw,52px);letter-spacing:-.03em;margin:16px 0 0}
+.hero .sub{font-size:17px;color:var(--ink-2);margin-top:14px;max-width:33em}
+.hero .desc{font-size:14.5px;color:var(--muted);margin-top:12px;max-width:34em}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stats div strong{display:block;font-size:20px;letter-spacing:-.02em}
+.hero-stats div span{font-size:12.5px;color:var(--muted)}
+.hero-art{
+  position:relative;background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow);padding:16px;overflow:hidden;
+}
+.hero-art .bar{display:flex;gap:6px;margin-bottom:12px}
+.hero-art .bar i{width:9px;height:9px;border-radius:50%;background:var(--line-strong)}
+.hero-art .bar i:first-child{background:#f4b8a8}
+.hero-art .bar i:nth-child(2){background:#f7dca8}
+.hero-art .bar i:nth-child(3){background:#b7dfc8}
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.art-card{
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:#fff;
+}
+.art-card img{width:100%;height:92px;object-fit:cover}
+.art-card .meta{padding:8px 10px}
+.art-card .meta b{font-size:12.5px;display:block;line-height:1.4}
+.art-card .meta span{font-size:11px;color:var(--muted)}
+.art-wave{margin-top:12px;border-radius:var(--radius-sm);overflow:hidden;background:var(--brand-soft)}
+.art-wave svg{display:block;width:100%;height:74px}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:34px 20px 0}
+.layout{
+  display:grid;grid-template-columns:186px minmax(0,1fr) 268px;gap:28px;align-items:start;
+}
+aside.left,aside.right{position:sticky;top:calc(var(--sticky) + 8px)}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+}
+.panel + .panel{margin-top:16px}
+.panel-h{
+  padding:12px 14px;border-bottom:1px solid var(--line);
+  font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.panel-b{padding:10px 12px}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px 8px;border-radius:var(--radius-sm);font-size:13.5px;color:var(--ink-2);
+}
+.channel-list a:hover{background:var(--brand-soft);color:var(--brand-deep)}
+.channel-list a em{font-style:normal;font-size:11px;color:var(--muted)}
+.rank-list li{display:flex;gap:9px;padding:8px 4px;border-bottom:1px dashed var(--line);font-size:13.5px}
+.rank-list li:last-child{border-bottom:0}
+.rank-list .no{
+  flex:0 0 20px;height:20px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+  font-size:11.5px;font-weight:700;display:grid;place-items:center;color:var(--muted);
+}
+.rank-list li:nth-child(1) .no{background:var(--accent);border-color:var(--accent);color:#fff}
+.rank-list li:nth-child(2) .no{background:#f0a04b;border-color:#f0a04b;color:#fff}
+.rank-list li:nth-child(3) .no{background:#e6b566;border-color:#e6b566;color:#fff}
+.rank-list .txt{min-width:0}
+.rank-list .txt b{display:block;font-size:13.5px;font-weight:600;line-height:1.45}
+.rank-list .txt span{font-size:11.5px;color:var(--muted)}
+.update-list li{padding:8px 4px;border-bottom:1px dashed var(--line);font-size:13px}
+.update-list li:last-child{border-bottom:0}
+.update-list b{font-weight:600;display:block;font-size:13px}
+.update-list span{font-size:11.5px;color:var(--muted)}
+
+/* ---------- 主栏通用 ---------- */
+main{min-width:0}
+.block{margin-bottom:38px}
+.block-h{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.block-h h2{font-size:21px;letter-spacing:-.02em}
+.block-h .lead{font-size:13px;color:var(--muted);margin-top:4px;max-width:46em}
+.block-h .more{font-size:13px;color:var(--brand-deep);font-weight:600;white-space:nowrap}
+
+/* 概览 */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow-sm)}
+.overview p{font-size:14.5px;color:var(--ink-2);margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--brand-deep)}
+
+/* 卡片网格 */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.18s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+.card .thumb{position:relative}
+.card .thumb img{width:100%;height:132px;object-fit:cover}
+.card .badge{
+  position:absolute;left:8px;top:8px;background:rgba(18,22,29,.78);color:#fff;
+  font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600;backdrop-filter:blur(4px);
+}
+.card .body{padding:12px 13px 13px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15px;line-height:1.4}
+.card .tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{
+  font-size:11px;padding:2px 8px;border-radius:20px;background:var(--bg);
+  border:1px solid var(--line);color:var(--muted);white-space:nowrap;
+}
+.tag.b{background:var(--brand-soft);border-color:#cfe0fb;color:var(--brand-deep)}
+.tag.a{background:var(--accent-soft);border-color:#f8d9c1;color:#b2430a}
+.tag.g{background:var(--green-soft);border-color:#c6e9da;color:#0b6b4a}
+.card .note{font-size:12.5px;color:var(--muted);line-height:1.62;flex:1}
+.card .foot{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.card .foot b{color:var(--accent);font-weight:700}
+
+/* 动态列表 */
+.dyn{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.dyn li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-bottom:1px solid var(--line)}
+.dyn li:last-child{border-bottom:0}
+.dyn time{flex:0 0 74px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.dyn .t b{font-size:14px;font-weight:600}
+.dyn .t span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.dyn .dot{flex:0 0 7px;height:7px;border-radius:50%;background:var(--brand);margin-top:8px}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  display:block;padding:14px 14px;border-radius:var(--radius);background:var(--panel);
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);transition:.16s;
+}
+.cat:hover{border-color:var(--brand);background:var(--brand-soft)}
+.cat b{display:block;font-size:14.5px}
+.cat span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow-sm)}
+.deep h3{font-size:17px;margin:22px 0 8px}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:14.5px;color:var(--ink-2);margin-bottom:10px}
+.deep ul{margin:6px 0 12px}
+.deep li{font-size:14px;color:var(--ink-2);padding-left:18px;position:relative;margin-bottom:6px}
+.deep li::before{content:"";position:absolute;left:4px;top:.72em;width:6px;height:6px;border-radius:2px;background:var(--brand)}
+.deep .callout{
+  background:var(--brand-soft);border-left:3px solid var(--brand);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:12px 16px;font-size:13.5px;color:var(--brand-deep);margin:14px 0;
+}
+
+/* 体验指南 步骤 */
+.steps{counter-reset:s;display:grid;gap:12px}
+.step{
+  counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px 16px 58px;position:relative;box-shadow:var(--shadow-sm);
+}
+.step::before{
+  content:counter(s);position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:8px;
+  background:var(--brand);color:#fff;display:grid;place-items:center;font-size:13.5px;font-weight:700;
+}
+.step b{font-size:14.5px;display:block;margin-bottom:3px}
+.step p{font-size:13.5px;color:var(--muted)}
+
+/* FAQ */
+details.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;box-shadow:var(--shadow-sm)}
+details.faq summary{
+  padding:14px 18px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:19px;color:var(--muted);font-weight:400;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq .ans{padding:0 18px 16px;font-size:14px;color:var(--ink-2)}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cm{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:13px 15px;box-shadow:var(--shadow-sm)}
+.cm .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cm .av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff;flex:0 0 auto}
+.cm .who b{font-size:13px;font-weight:600}
+.cm .who span{font-size:11px;color:var(--muted);margin-left:auto}
+.cm p{font-size:13.5px;color:var(--ink-2)}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.news-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.news-item img{width:100%;height:118px;object-fit:cover}
+.news-item .nb{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.news-item h3{font-size:14.5px;line-height:1.4}
+.news-item p{font-size:12.5px;color:var(--muted);flex:1}
+.news-item time{font-size:11.5px;color:var(--brand-deep);font-weight:600}
+
+/* 相关推荐 标签索引 */
+.rel{display:flex;flex-wrap:wrap;gap:8px}
+.rel a{
+  font-size:13px;padding:6px 14px;border-radius:999px;background:var(--panel);
+  border:1px solid var(--line-strong);color:var(--ink-2);transition:.15s;
+}
+.rel a:hover{border-color:var(--brand);color:var(--brand-deep);background:var(--brand-soft)}
+
+/* 时间线 */
+.timeline{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:6px 20px 10px;box-shadow:var(--shadow-sm)}
+.tl{position:relative;padding:14px 0 14px 22px;border-left:2px solid var(--line)}
+.tl:last-child{border-left-color:transparent}
+.tl::before{content:"";position:absolute;left:-6px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--brand);border:2px solid #fff;box-shadow:0 0 0 2px var(--brand-soft)}
+.tl time{font-size:11.5px;color:var(--brand-deep);font-weight:700;letter-spacing:.02em}
+.tl b{display:block;font-size:14.5px;margin-top:2px}
+.tl span{font-size:13px;color:var(--muted)}
+
+/* 页尾 */
+footer.site{background:#11161d;color:#c3cbd6;margin-top:44px}
+.foot-in{max-width:var(--max);margin:0 auto;padding:40px 20px 24px}
+.foot-top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px;padding-bottom:28px;border-bottom:1px solid #232c38}
+.foot-brand .logo-text{color:#fff}
+.foot-brand .logo-text small{color:#8d99a8}
+.foot-brand p{font-size:13px;color:#8d99a8;margin-top:12px;max-width:26em;line-height:1.75}
+.foot-col h4{font-size:12.5px;letter-spacing:.1em;color:#7d8a99;text-transform:uppercase;margin-bottom:10px}
+.foot-col a{display:block;font-size:13.5px;color:#c3cbd6;padding:4px 0}
+.foot-col a:hover{color:#fff}
+.foot-bot{padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#7d8a99}
+
+/* 响应式 */
+@media (max-width:1120px){
+  .layout{grid-template-columns:170px minmax(0,1fr) 240px;gap:20px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  :root{--sticky:92px}
+  .layout{grid-template-columns:minmax(0,1fr) 260px}
+  aside.left{display:none}
+  .hero-in{grid-template-columns:1fr;gap:26px}
+  nav.main{order:3;flex:1 1 100%;padding-bottom:8px;overflow-x:auto;flex-wrap:nowrap}
+  .head-in{flex-wrap:wrap;padding-top:8px;padding-bottom:0}
+  .search{order:4;flex:1 1 100%;margin-bottom:10px}
+}
+@media (max-width:740px){
+  :root{--sticky:88px}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  aside.right{position:static;margin-top:8px}
+  .cards,.comments,.news{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-in{padding:30px 16px 34px}
+  .wrap{padding:24px 16px 0}
+  .deep{padding:20px 18px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:22px}
+  .head-cta{display:none}
+  .notice a{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice">
+  <div class="notice-in">
+    <b>本周更新</b>
+    <span>新增 14 条短剧与纪录片条目，11 月 25 日《夜班电台》第 6 集上线</span>
+    <a href="/#latest">查看动态 →</a>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site">
+  <div class="head-in">
+    <a class="logo" href="/#top" aria-label="91次网首页">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="11" fill="#1f6feb"/>
+        <path d="M13 12.5v15l12-7.5-12-7.5z" fill="#fff"/>
+        <circle cx="28.5" cy="12" r="2.6" fill="#ffd166"/>
+      </svg>
+      <span class="logo-text">91次网<small>VIDEO HUB</small></span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="/#channels">短剧频道</a>
+      <a href="/#channels">纪录片</a>
+      <a href="/#channels">播客</a>
+      <a href="/#channels">Vlog</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#faq">常见问题</a>
+    </nav>
+    <form class="search" role="search" onsubmit="return false;">
+      <input id="q" type="search" placeholder="搜索条目、类型或创作者" aria-label="搜索站内条目" autocomplete="off" />
+      <button type="submit" id="qbtn">查找</button>
+    </form>
+    <div class="head-cta">
+      <a class="btn btn-ghost" href="/#community">社区评论</a>
+      <a class="btn btn-primary" href="/#featured">开始浏览</a>
+    </div>
+  </div>
+  <p class="search-status" id="qstatus" role="status" aria-live="polite"></p>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-in">
+    <div>
+      <span class="hero-tag">短剧 · 纪录片 · 播客 · Vlog</span>
+      <h1>91次网</h1>
+      <p class="sub">一个把短剧、纪录片、播客与 Vlog 放在同一张片单里的视频社区，条目按类型、更新节奏和制作规格整理，方便你决定先看什么。</p>
+      <p class="desc">这里有每周更新的条目动态、按垂类划分的频道、逐条写清楚看点与适用人群的卡片，以及围绕具体作品展开的解析与讨论。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#featured">浏览精选条目</a>
+        <a class="btn btn-ghost" href="/#latest">看本周更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>1,860+</strong><span>在库条目</span></div>
+        <div><strong>26</strong><span>本周新上线</span></div>
+        <div><strong>14</strong><span>垂类频道</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="art-grid">
+        <div class="art-card">
+          <img src="https://picsum.photos/seed/91ci-duanju12/400/300" alt="短剧《夜班电台》封面" width="400" height="300" loading="lazy" />
+          <div class="meta"><b>夜班电台</b><span>短剧 · 更新至 6 集</span></div>
+        </div>
+        <div class="art-card">
+          <img src="https://picsum.photos/seed/91ci-jilu34/400/300" alt="纪录片《盐碱地上的春天》封面" width="400" height="300" loading="lazy" />
+          <div class="meta"><b>盐碱地上的春天</b><span>纪录片 · 全 4 集</span></div>
+        </div>
+        <div class="art-card">
+          <img src="https://picsum.photos/seed/91ci-boke56/400/300" alt="播客《城市折叠》节目封面" width="400" height="300" loading="lazy" />
+          <div class="meta"><b>城市折叠</b><span>播客 · 第 42 期</span></div>
+        </div>
+        <div class="art-card">
+          <img src="https://picsum.photos/seed/91ci-vlog78/400/300" alt="Vlog《一个人的环岛骑行》封面" width="400" height="300" loading="lazy" />
+          <div class="meta"><b>一个人的环岛骑行</b><span>Vlog · 连载 9 期</span></div>
+        </div>
+      </div>
+      <div class="art-wave">
+        <svg viewBox="0 0 400 74" preserveAspectRatio="none" role="presentation">
+          <rect width="400" height="74" fill="#e8f0fe"/>
+          <g fill="#1f6feb" opacity=".85">
+            <rect x="14" y="34" width="8" height="22" rx="4"/>
+            <rect x="30" y="22" width="8" height="40" rx="4"/>
+            <rect x="46" y="40" width="8" height="16" rx="4"/>
+            <rect x="62" y="14" width="8" height="50" rx="4"/>
+            <rect x="78" y="30" width="8" height="26" rx="4"/>
+            <rect x="94" y="44" width="8" height="12" rx="4"/>
+            <rect x="110" y="20" width="8" height="42" rx="4"/>
+            <rect x="126" y="36" width="8" height="20" rx="4"/>
+            <rect x="142" y="10" width="8" height="52" rx="4"/>
+            <rect x="158" y="28" width="8" height="28" rx="4"/>
+            <rect x="174" y="42" width="8" height="14" rx="4"/>
+            <rect x="190" y="18" width="8" height="44" rx="4"/>
+            <rect x="206" y="32" width="8" height="24" rx="4"/>
+            <rect x="222" y="8" width="8" height="54" rx="4"/>
+            <rect x="238" y="26" width="8" height="30" rx="4"/>
+            <rect x="254" y="38" width="8" height="18" rx="4"/>
+            <rect x="270" y="16" width="8" height="46" rx="4"/>
+            <rect x="286" y="34" width="8" height="22" rx="4"/>
+            <rect x="302" y="24" width="8" height="36" rx="4"/>
+            <rect x="318" y="40" width="8" height="16" rx="4"/>
+            <rect x="334" y="20" width="8" height="42" rx="4"/>
+            <rect x="350" y="30" width="8" height="26" rx="4"/>
+            <rect x="366" y="44" width="8" height="12" rx="4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+
+    <!-- 左频道栏 -->
+    <aside class="left" aria-label="频道索引">
+      <div class="panel">
+        <div class="panel-h">频道索引</div>
+        <div class="panel-b channel-list">
+          <a href="/#channels">短剧 <em>412</em></a>
+          <a href="/#channels">纪录片 <em>286</em></a>
+          <a href="/#channels">播客 <em>198</em></a>
+          <a href="/#channels">Vlog <em>331</em></a>
+          <a href="/#channels">动画短片 <em>146</em></a>
+          <a href="/#channels">知识讲解 <em>174</em></a>
+          <a href="/#channels">访谈对谈 <em>112</em></a>
+          <a href="/#channels">影像实验 <em>94</em></a>
+          <a href="/#channels">幕后花絮 <em>87</em></a>
+          <a href="/#channels">片单合集 <em>63</em></a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">本周热榜</div>
+        <div class="panel-b">
+          <ul class="rank-list">
+            <li><span class="no">1</span><div class="txt"><b>夜班电台</b><span>短剧 · 热度 9821</span></div></li>
+            <li><span class="no">2</span><div class="txt"><b>盐碱地上的春天</b><span>纪录片 · 热度 8740</span></div></li>
+            <li><span class="no">3</span><div class="txt"><b>城市折叠</b><span>播客 · 热度 7912</span></div></li>
+            <li><span class="no">4</span><div class="txt"><b>一个人的环岛骑行</b><span>Vlog · 热度 7405</span></div></li>
+            <li><span class="no">5</span><div class="txt"><b>纸箱里的星球</b><span>动画短片 · 热度 6888</span></div></li>
+            <li><span class="no">6</span><div class="txt"><b>十分钟讲透通胀</b><span>知识讲解 · 热度 6310</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main>
+
+      <!-- 1. 主题领域概览 -->
+      <section class="block" id="overview" aria-labelledby="h-overview">
+        <div class="block-h">
+          <div>
+            <h2 id="h-overview">这个视频社区里都有什么</h2>
+            <p class="lead">从三分钟一集的短剧到四集完结的纪录片，从主播对谈到个人 Vlog，按内容形态而不是流量分栏。</p>
+          </div>
+        </div>
+        <div class="overview">
+          <p><strong>91次网</strong>收录的主要内容形态可以分成四类。第一类是<strong>竖屏短剧</strong>：单集 3—8 分钟，通常 12—24 集完结，题材集中在都市情感、悬疑推理与轻喜剧，更新节奏多为每周两更。第二类是<strong>中短篇纪录片</strong>：单集 20—45 分钟，4—8 集为一季，涉及乡土、职业、城市生活与工业现场，制作周期长，条目数少但稳定。</p>
+          <p>第三类是<strong>播客与访谈对谈</strong>：以音频为主、辅以视频画面，单期 40—90 分钟，适合通勤和家务场景，更新最密集。第四类是<strong>Vlog 与影像实验</strong>：个人视角的连载记录、骑行、独居、手作、城市漫游，以及实验性的短片尝试，规格不一，靠连载积累观众。</p>
+          <p>当前值得关注的方向有三个：一是短剧开始出现单集 10 分钟以上的“中剧集”尝试，叙事更完整；二是纪录片出现了大量以具体职业为切口的小体量作品，比如夜班护士、盐场工人、跨境货车司机；三是播客的视频化让对谈类内容有了可截取的画面片段，社区讨论也从“听完了”转向“第 42 期那段怎么看”。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="block" id="featured" aria-labelledby="h-featured">
+        <div class="block-h">
+          <div>
+            <h2 id="h-featured">精选条目推荐</h2>
+            <p class="lead">九条当下可看的作品，写清楚它是什么、适合谁、值不值得投入时间。</p>
+          </div>
+          <a class="more" href="/#latest">按更新排序 →</a>
+        </div>
+        <div class="cards" id="cards">
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-yeban-diantai01/400/300" alt="短剧《夜班电台》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">更新至 6 集</span>
+            </div>
+            <div class="body">
+              <h3>夜班电台</h3>
+              <div class="tags"><span class="tag b">悬疑短剧</span><span class="tag">都市</span><span class="tag">每周两更</span></div>
+              <p class="note">深夜电台主播接到一通不该存在的来电，每集解开一个听众的秘密。单集 7 分钟，台词密度高，适合喜欢推理但不耐长剧的观众。</p>
+              <div class="foot"><span>热度 9821</span><b>8.6 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-yanjian-chuntian02/400/300" alt="纪录片《盐碱地上的春天》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">全 4 集</span>
+            </div>
+            <div class="body">
+              <h3>盐碱地上的春天</h3>
+              <div class="tags"><span class="tag g">乡土纪录片</span><span class="tag">农业</span><span class="tag">已完结</span></div>
+              <p class="note">跟拍苏北一个村庄改良盐碱地的四年，几乎没有旁白，靠田里的声音和农户的日常对话推进，适合想安静看完一部纪录片的观众。</p>
+              <div class="foot"><span>热度 8740</span><b>9.1 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-chengshi-zhedie03/400/300" alt="播客《城市折叠》节目封面" width="400" height="300" loading="lazy" />
+              <span class="badge">第 42 期</span>
+            </div>
+            <div class="body">
+              <h3>城市折叠</h3>
+              <div class="tags"><span class="tag b">播客</span><span class="tag">城市观察</span><span class="tag">每周更新</span></div>
+              <p class="note">每期请一位在城市里做具体工作的人聊天：地铁检修工、便利店夜班店长、旧书摊主。第 42 期讲的是凌晨四点的环卫调度。</p>
+              <div class="foot"><span>热度 7912</span><b>8.9 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-huandao-qixing04/400/300" alt="Vlog《一个人的环岛骑行》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">连载 9 期</span>
+            </div>
+            <div class="body">
+              <h3>一个人的环岛骑行</h3>
+              <div class="tags"><span class="tag a">Vlog</span><span class="tag">骑行</span><span class="tag">连载</span></div>
+              <p class="note">作者用 21 天骑行环岛，每期 12 分钟，记录路况、住宿价格和临时改变的计划，不刻意煽情，适合当作路线参考看。</p>
+              <div class="foot"><span>热度 7405</span><b>8.4 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-zhixiang-xingqiu05/400/300" alt="动画短片《纸箱里的星球》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">单集 14 分钟</span>
+            </div>
+            <div class="body">
+              <h3>纸箱里的星球</h3>
+              <div class="tags"><span class="tag b">动画短片</span><span class="tag">定格</span><span class="tag">独立制作</span></div>
+              <p class="note">用纸板与旧零件做出的一颗微型星球，讲述一个只在纸箱里存在的文明如何度过它的一天。定格拍摄，制作周期两年。</p>
+              <div class="foot"><span>热度 6888</span><b>8.8 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-tongzhang06/400/300" alt="知识讲解《十分钟讲透通胀》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">第 18 期</span>
+            </div>
+            <div class="body">
+              <h3>十分钟讲透通胀</h3>
+              <div class="tags"><span class="tag g">知识讲解</span><span class="tag">经济</span><span class="tag">单集完结</span></div>
+              <p class="note">用菜市场、房租和工资三个场景解释通胀怎么传导到个人，结尾给了两个自查问题。适合零基础、想快速建立概念的人。</p>
+              <div class="foot"><span>热度 6310</span><b>8.2 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-yeban-hushi07/400/300" alt="纪录片《夜班护士的十二小时》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">全 3 集</span>
+            </div>
+            <div class="body">
+              <h3>夜班护士的十二小时</h3>
+              <div class="tags"><span class="tag g">职业纪录片</span><span class="tag">医疗</span><span class="tag">已完结</span></div>
+              <p class="note">三集分别跟拍急诊、ICU 和产科夜班，不做价值判断，只记录交接班、家属沟通和凌晨的走廊。看完对医疗节奏会有具体认识。</p>
+              <div class="foot"><span>热度 6102</span><b>9.0 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-jiating-liaoli08/400/300" alt="短剧《合租三十天》封面" width="400" height="300" loading="lazy" />
+              <span class="badge">全 16 集</span>
+            </div>
+            <div class="body">
+              <h3>合租三十天</h3>
+              <div class="tags"><span class="tag b">轻喜剧短剧</span><span class="tag">都市</span><span class="tag">已完结</span></div>
+              <p class="note">四个陌生人合租一套老房子，每集对应一天，冲突都来自具体的生活细节：水费怎么分、谁在客厅打电话。适合下饭看。</p>
+              <div class="foot"><span>热度 5845</span><b>8.0 分</b></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://picsum.photos/seed/91ci-fangtan09/400/300" alt="访谈《导演在场》节目封面" width="400" height="300" loading="lazy" />
+              <span class="badge">第 27 期</span>
+            </div>
+            <div class="body">
+              <h3>导演在场</h3>
+              <div class="tags"><span class="tag a">访谈对谈</span><span class="tag">幕后</span><span class="tag">双周更新</span></div>
+              <p class="note">每期请一位短片或纪录片导演聊具体拍摄决策：为什么用自然光、这场戏为什么剪掉。第 27 期聊的是小成本如何解决收音。</p>
+              <div class="foot"><span>热度 5260</span><b>8.5 分</b></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="block" id="latest" aria-labelledby="h-latest">
+        <div class="block-h">
+          <div>
+            <h2 id="h-latest">最新更新与动态</h2>
+            <p class="lead">11 月 25 日前后的上线、排播与规则调整，按时间倒序。</p>
+          </div>
+        </div>
+        <ul class="dyn">
+          <li><span class="dot"></span><time>今天 09:30</time><div class="t"><b>《夜班电台》第 6 集上线</b><span>谜面推进到主播自己的过去，单集时长 8 分 12 秒。</span></div></li>
+          <li><span class="dot"></span><time>今天 08:10</time><div class="t"><b>《盐碱地上的春天》第 3 集解封</b><span>此前仅对社区成员开放，现在全站可看，画质同步升级到 4K。</span></div></li>
+          <li><span class="dot"></span><time>昨天 21:10</time><div class="t"><b>《城市折叠》第 42 期发布</b><span>嘉宾是环卫调度员，聊凌晨四点的排班表怎么排。</span></div></li>
+          <li><span class="dot"></span><time>昨天 18:40</time><div class="t"><b>《一个人的环岛骑行》第 9 期更新</b><span>进入东海岸段，遇到连续两天降雨，临时改了路线。</span></div></li>
+          <li><span class="dot"></span><time>11 月 23 日</time><div class="t"><b>短剧频道新增“中剧集”筛选</b><span>单集 10 分钟以上的短剧单独归类，目前收录 38 部。</span></div></li>
+          <li><span class="dot"></span><time>11 月 22 日</time><div class="t"><b>《纸箱里的星球》幕后特辑上线</b><span>记录定格拍摄的 240 天，含 12 分钟制作过程。</span></div></li>
+          <li><span class="dot"></span><time>11 月 20 日</time><div class="t"><b>《合租三十天》全 16 集完结</b><span>最后一集回到第一天的客厅，评论区已有 800 多条讨论。</span></div></li>
+          <li><span class="dot"></span><time>11 月 18 日</time><div class="t"><b>《导演在场》第 27 期上线</b><span>主题是小成本拍摄的收音方案，附设备清单。</span></div></li>
+          <li><span class="dot"></span><time>11 月 15 日</time><div class="t"><b>纪录片《夜班护士的十二小时》全 3 集上线</b><span>拍摄历时 11 个月，三集分别跟拍三个科室。</span></div></li>
+          <li><span class="dot"></span><time>11 月 12 日</time><div class="t"><b>新增“片单合集”频道</b><span>首批上线 9 份主题片单，如“通勤 30 分钟可听完”。</span></div></li>
+          <li><span class="dot"></span><time>11 月 8 日</time><div class="t"><b>《十分钟讲透通胀》第 18 期上线</b><span>补充了两个自查问题，附延伸阅读三条。</span></div></li>
+          <li><span class="dot"></span><time>11 月 3 日</time><div class="t"><b>社区评论新增“条目内讨论”</b><span>评论可以绑定到具体集数，讨论不再混在一起。</span></div></li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="block" id="channels" aria-labelledby="h-channels">
+        <div class="block-h">
+          <div>
+            <h2 id="h-channels">按类型进入</h2>
+            <p class="lead">八个垂类，每个对应一种明确的观看需求。</p>
+          </div>
+        </div>
+        <div class="cats">
+          <a class="cat" href="/#channels"><b>悬疑短剧</b><span>推理、反转、单元解谜</span></a>
+          <a class="cat" href="/#channels"><b>都市情感短剧</b><span>合租、职场、家庭关系</span></a>
+          <a class="cat" href="/#channels"><b>乡土纪录片</b><span>村庄、农业、迁徙</span></a>
+          <a class="cat" href="/#channels"><b>职业纪录片</b><span>医护、货运、夜班现场</span></a>
+          <a class="cat" href="/#channels"><b>城市观察播客</b><span>具体职业与城市生活</span></a>
+          <a class="cat" href="/#channels"><b>通勤 Vlog</b><span>骑行、独居、日常记录</span></a>
+          <a class="cat" href="/#channels"><b>定格与动画短片</b><span>手工、实验、独立制作</span></a>
+          <a class="cat" href="/#channels"><b>知识讲解</b><span>经济、科学、技能拆解</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="block" id="deep" aria-labelledby="h-deep">
+        <div class="block-h">
+          <div>
+            <h2 id="h-deep">深度解析：短剧与纪录片到底怎么选</h2>
+            <p class="lead">同一段时间，看短剧和看纪录片得到的体验完全不同，这里拆开讲判断维度。</p>
+          </div>
+        </div>
+        <div class="deep">
+          <h3>短剧的三种规格，先分清再看</h3>
+          <p>短剧并不是一个统一的东西。按单集时长和叙事结构，大致可以分成三类：一是<strong>强钩子竖屏剧</strong>，单集 3—5 分钟，每集结尾必须留悬念，整季 20 集以上，适合碎片时间；二是<strong>中剧集</strong>，单集 10—15 分钟，能容纳完整的一场戏，人物动机交代得更清楚；三是<strong>单元短剧</strong>，每集独立成篇，共享同一个设定或主角，比如《夜班电台》就是典型。</p>
+          <p>判断一部短剧值不值得追，看三个点：第一集有没有在 90 秒内建立具体冲突，而不是靠旁白介绍背景；主要人物有没有明确的行动目标，而不是被剧情推着走；每集结尾的钩子是不是同一个套路的重复。前两点决定能不能看下去，第三点决定能看多久。</p>
+          <div class="callout">如果一部短剧前三集都在用同一句台词制造悬念，通常后面对叙事的要求也不会高，可以直接放弃，把时间留给中剧集。</div>
+
+          <h3>纪录片看的是切口，不是题材大小</h3>
+          <p>纪录片的价值往往不在题材多大，而在切口多具体。《盐碱地上的春天》不讲“农业现代化”，只讲一块地四年里怎么变；《夜班护士的十二小时》不讲“医疗体系”，只讲三个科室的一个夜班。切口越具体，观众越容易获得可验证的细节。</p>
+          <p>看之前可以先确认三件事：</p>
+          <ul>
+            <li>拍摄周期——跨度一年以上的作品，通常能拍到变化，而不是只拍到状态；</li>
+            <li>是否使用旁白——大量旁白往往意味着画面本身信息不足；</li>
+            <li>有没有出现被拍摄者的具体工作动作——这是判断纪录片是否真的进入现场的直接依据。</li>
+          </ul>
+
+          <h3>播客与访谈：适合“听”而不适合“看”的部分</h3>
+          <p>对谈类内容的信息密度高，但画面信息少。判断一期值不值得听，可以看节目页有没有给出时间轴和具体话题点。《城市折叠》第 42 期把凌晨四点的排班过程拆成了三个时间节点，这类结构化处理通常意味着主播做过功课。反过来，如果节目介绍只有嘉宾头衔，没有具体聊什么，通常需要靠嘉宾本身撑场。</p>
+
+          <h3>Vlog 的可持续性怎么判断</h3>
+          <p>Vlog 最大的问题是连载到中段失去动力。判断标准有两个：作者有没有给出可复用的具体信息，比如路线、价格、装备清单；以及更新节奏是否稳定。像《一个人的环岛骑行》每期都标注了当天里程和住宿花费，这类信息让 Vlog 从“看别人生活”变成“可以参照的记录”。</p>
+
+          <h3>三类内容的投入产出对比</h3>
+          <ul>
+            <li><strong>短剧</strong>：单次投入 1—3 小时可看完一季，情绪回报快，但记忆留存短；</li>
+            <li><strong>纪录片</strong>：单次投入 1.5—4 小时，信息留存长，适合想获得具体认知的时候；</li>
+            <li><strong>播客</strong>：可与其他事情并行，单期 40—90 分钟，适合通勤和家务，但需要主动回听关键段落。</li>
+          </ul>
+          <p>如果你只有零散的 20 分钟，优先选单元短剧或播客单期；如果有整块的晚上，纪录片和完整的短剧季更合适。这个选择顺序比“哪个更火”更能决定你这次看得是否舒服。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="block" id="guide" aria-labelledby="h-guide">
+        <div class="block-h">
+          <div>
+            <h2 id="h-guide">第一次来，按这个顺序看</h2>
+            <p class="lead">四步决定这次看什么，不涉及页面操作，只讲内容消费的判断。</p>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step"><b>先定时间长度</b><p>20 分钟以内选单元短剧或播客单期；1 小时左右选一部中剧集或两集纪录片；整晚就挑一季完结的短剧或一部长纪录片。</p></div>
+          <div class="step"><b>再定情绪需求</b><p>想放松就看轻喜剧短剧，比如《合租三十天》；想获得具体认知就看职业纪录片或知识讲解；想安静一点就选乡土纪录片。</p></div>
+          <div class="step"><b>看条目页的三条信息</b><p>更新状态（连载还是完结）、单集时长、以及看点里有没有写清楚“这是什么”。三条都具体，基本可以直接开始看。</p></div>
+          <div class="step"><b>同类条目横向比一次</b><p>同类型挑两部对比第一集：谁在 90 秒内建立了冲突，谁的细节更可验证，就先看谁。剩下那部放进片单，不必现在决定。</p></div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="block" id="faq" aria-labelledby="h-faq">
+        <div class="block-h">
+          <div>
+            <h2 id="h-faq">常见问题</h2>
+            <p class="lead">围绕类型差异、更新节奏和入门选择的六个问题。</p>
+          </div>
+        </div>
+
+        <details class="faq" open>
+          <summary>短剧一般多久更新一次？</summary>
+          <div class="ans">多数是每周两更，固定在周二和周五，单集 3—8 分钟。中剧集因为制作周期长，常见的是每周一更。《夜班电台》目前是每周二、周五各一集，遇到节假日会顺延一天，条目页会标注下一集时间。</div>
+        </details>
+
+        <details class="faq">
+          <summary>短剧和微短剧有什么区别？</summary>
+          <div class="ans">这里说的短剧指单集 3—15 分钟、有完整叙事结构的剧集；微短剧通常指单集 1—2 分钟、以强反转驱动的内容。前者更接近传统剧集的分集逻辑，人物有成长线；后者更依赖单点刺激。想看完整故事，优先选短剧里的中剧集。</div>
+        </details>
+
+        <details class="faq">
+          <summary>第一次接触纪录片，从哪一部开始比较好？</summary>
+          <div class="ans">建议从《夜班护士的十二小时》开始。它只有三集，每集 40 分钟左右，切口具体，不依赖背景知识，看完能直接说出三个科室夜班的具体差别。如果更喜欢乡土题材，可以换《盐碱地上的春天》，但需要一点耐心。</div>
+        </details>
+
+        <details class="faq">
+          <summary>播客类节目怎么判断值不值得听？</summary>
+          <div class="ans">看节目页有没有时间轴和具体话题点。有结构化处理的节目，通常主播做过准备，信息密度高；只有嘉宾头衔没有具体话题的，往往靠嘉宾个人魅力。另外可以看单期时长，超过 90 分钟又没有分段提示的，通勤场景下不太友好。</div>
+        </details>
+
+        <details class="faq">
+          <summary>Vlog 和纪录片有什么本质区别？</summary>
+          <div class="ans">Vlog 是作者视角的连续记录，重点在“我经历了什么”；纪录片是外部视角的观察，重点在“这件事本身是什么样”。判断标准也不同：Vlog 看信息可复用性和更新稳定性，纪录片看拍摄周期和是否进入现场。</div>
+        </details>
+
+        <details class="faq">
+          <summary>短剧的质量通常按什么标准评判？</summary>
+          <div class="ans">主要看四点：第一集能否在 90 秒内建立具体冲突；人物有没有明确行动目标；每集钩子是否避免重复套路；以及结尾是否给出可接受的收束。前三点决定观看体验，第四点决定看完之后会不会觉得被敷衍。</div>
+        </details>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="block" id="community" aria-labelledby="h-community">
+        <div class="block-h">
+          <div>
+            <h2 id="h-community">社区在聊什么</h2>
+            <p class="lead">16 条来自条目内讨论的评论，围绕具体作品和具体集数。</p>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="cm"><div class="who"><span class="av" style="background:#1f6feb">林</span><b>林间有雾</b><span>11-25</span></div><p>《夜班电台》第 6 集把主播自己的过去翻出来了，之前几集的来电其实都有伏笔，回去重看第 2 集才发现。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#e8590c">周</span><b>周五不加班</b><span>11-25</span></div><p>《合租三十天》最后一集回到第一天的客厅，这个收尾挺稳的，没有硬加反转，就是四个人坐在那儿吃泡面。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#0f8a5f">陈</span><b>陈小满</b><span>11-24</span></div><p>《盐碱地上的春天》第三集解封了，4K 画质下能看清田里的盐霜，之前那个版本糊得厉害。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#7a4fd1">阿</span><b>阿岚在听</b><span>11-24</span></div><p>《城市折叠》第 42 期讲排班表那段我听了两遍，原来凌晨四点的调度是在前一晚十点就定好的。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#c2255c">骑</span><b>骑行小许</b><span>11-24</span></div><p>《一个人的环岛骑行》第 9 期遇到连续降雨改路线，这个处理很真实，没有硬拍下去。住宿价格也标了，能当参考。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#0b7285">纸</span><b>纸箱爱好者</b><span>11-23</span></div><p>《纸箱里的星球》幕后特辑比正片还长，240 天做 14 分钟，看完对定格动画的耐心有了新认识。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#5f3dc4">夜</span><b>夜班三年</b><span>11-22</span></div><p>《夜班护士的十二小时》拍得克制，交接班那段基本就是我每天在做的事。没有煽情，这点很好。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#2b8a3e">老</span><b>老周看片</b><span>11-22</span></div><p>中剧集筛选上线后翻了一遍，38 部里真正能撑住 10 分钟一集的不到一半，多数还是靠结尾钩子。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#e67700">十</span><b>十分钟党</b><span>11-21</span></div><p>《十分钟讲透通胀》第 18 期结尾那两个自查问题挺实用，比单纯讲概念强，至少能自己套一遍。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#1864ab">导</span><b>导演系旁听</b><span>11-20</span></div><p>《导演在场》第 27 期的收音方案讲得很细，设备清单也有，小成本拍摄可以直接照抄一部分。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#862e9c">合</span><b>合租第七年</b><span>11-20</span></div><p>《合租三十天》水费怎么分那集太真实了，我现在的合租群还在为这个吵。轻喜剧能拍到这个程度已经不错。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#087f5b">盐</span><b>盐场边的猫</b><span>11-19</span></div><p>《盐碱地上的春天》几乎没有旁白这点很难得，田里的声音本身就够，不需要解说告诉你该感动。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#a61e4d">通</span><b>通勤四十分钟</b><span>11-18</span></div><p>片单合集里“通勤 30 分钟可听完”那份挺准，挑了三期播客，时长都在 35 分钟上下，没被坑。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#364fc7">一</span><b>一只耳机</b><span>11-17</span></div><p>《城市折叠》前几期嘉宾偏文艺，第 40 期之后换成具体职业的人，明显好听了，话题更落地。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#5c940d">短</span><b>短剧观察员</b><span>11-16</span></div><p>《夜班电台》第 4 集节奏有点拖，一场戏反复解释同一个线索。不过第 5、6 集又拉回来了。</p></div>
+          <div class="cm"><div class="who"><span class="av" style="background:#d9480f">半</span><b>半盏茶</b><span>11-15</span></div><p>《夜班护士的十二小时》三集看下来，ICU 那集最沉，产科那集反而有笑声。选题编排是有想法的。</p></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="block" id="news" aria-labelledby="h-news">
+        <div class="block-h">
+          <div>
+            <h2 id="h-news">相关资讯</h2>
+            <p class="lead">六条与条目、类型和社区讨论直接相关的动态。</p>
+          </div>
+        </div>
+        <div class="news">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-zhongju01/600/400" alt="中剧集筛选页面上线的界面示意" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-23</time><h3>“中剧集”筛选上线，38 部短剧单集超过 10 分钟</h3><p>单集 10—15 分钟的短剧被单独归类，条目页同步标注叙事结构，方便区分强钩子竖屏剧与完整分集剧。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-yeban02/600/400" alt="《夜班电台》第 6 集剧照" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-25</time><h3>《夜班电台》第 6 集上线，主播过往成为新线索</h3><p>本集时长 8 分 12 秒，前五集的来电内容被重新串联，社区讨论集中在第 2 集的一处伏笔。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-yanjian03/600/400" alt="《盐碱地上的春天》盐田画面" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-24</time><h3>《盐碱地上的春天》第 3 集解封，画质升级至 4K</h3><p>此前仅对社区成员开放，本次同步升级分辨率，田里的盐霜与作物细节更清晰。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-boke04/600/400" alt="《城市折叠》录制现场" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-24</time><h3>《城市折叠》第 42 期上线，嘉宾为环卫调度员</h3><p>节目把凌晨四点的排班过程拆成三个时间节点，附完整时间轴，适合通勤收听。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-huandao05/600/400" alt="环岛骑行路段风景" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-24</time><h3>《一个人的环岛骑行》东海岸段更新，路线临时调整</h3><p>第 9 期记录连续两天降雨后的改道，住宿价格与里程同步标注，可作路线参考。</p></div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/91ci-news-pinglun06/600/400" alt="社区条目内讨论界面示意" width="600" height="400" loading="lazy" />
+            <div class="nb"><time>2026-11-03</time><h3>社区评论支持绑定具体集数，讨论不再混在一起</h3><p>条目内讨论可按集查看，短剧与纪录片的评论区分开，长评论默认折叠。</p></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="block" id="related" aria-labelledby="h-related">
+        <div class="block-h">
+          <div>
+            <h2 id="h-related">延伸方向</h2>
+            <p class="lead">与当前条目相邻的类型和具体作品，不是热榜的重复。</p>
+          </div>
+        </div>
+        <div class="rel">
+          <a href="/#channels">单元解谜短剧</a>
+          <a href="/#channels">医疗职业纪录片</a>
+          <a href="/#channels">小成本收音方案</a>
+          <a href="/#channels">乡土影像四年跟拍</a>
+          <a href="/#channels">城市夜班题材</a>
+          <a href="/#channels">定格动画制作过程</a>
+          <a href="/#channels">通勤可听片单</a>
+          <a href="/#channels">合租生活轻喜剧</a>
+        </div>
+      </section>
+
+      <!-- 11. 条目时间线 -->
+      <section class="block" id="timeline" aria-labelledby="h-timeline">
+        <div class="block-h">
+          <div>
+            <h2 id="h-timeline">条目时间线</h2>
+            <p class="lead">近一个月内上线的关键条目，按时间排列。</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="tl"><time>11 月 25 日</time><b>《夜班电台》第 6 集</b><span>悬疑短剧，单集 8 分 12 秒，每周二、五更新。</span></div>
+          <div class="tl"><time>11 月 24 日</time><b>《城市折叠》第 42 期</b><span>城市观察播客，嘉宾为环卫调度员。</span></div>
+          <div class="tl"><time>11 月 23 日</time><b>中剧集筛选上线</b><span>收录 38 部单集 10 分钟以上的短剧。</span></div>
+          <div class="tl"><time>11 月 22 日</time><b>《纸箱里的星球》幕后特辑</b><span>定格动画制作过程，12 分钟。</span></div>
+          <div class="tl"><time>11 月 20 日</time><b>《合租三十天》全 16 集完结</b><span>轻喜剧短剧，最后一集回到第一天客厅。</span></div>
+          <div class="tl"><time>11 月 15 日</time><b>《夜班护士的十二小时》全 3 集</b><span>职业纪录片，拍摄历时 11 个月。</span></div>
+          <div class="tl"><time>11 月 3 日</time><b>条目内讨论功能上线</b><span>评论可绑定到具体集数。</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="right" aria-label="辅助信息">
+      <div class="panel">
+        <div class="panel-h">本周更新流</div>
+        <div class="panel-b">
+          <ul class="update-list">
+            <li><b>夜班电台 · 第 6 集</b><span>今天 09:30</span></li>
+            <li><b>盐碱地上的春天 · 第 3 集解封</b><span>今天 08:10</span></li>
+            <li><b>城市折叠 · 第 42 期</b><span>昨天 21:10</span></li>
+            <li><b>环岛骑行 · 第 9 期</b><span>昨天 18:40</span></li>
+            <li><b>中剧集筛选上线</b><span>11 月 23 日</span></li>
+            <li><b>纸箱里的星球 · 幕后</b><span>11 月 22 日</span></li>
+            <li><b>合租三十天 · 完结</b><span>11 月 20 日</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">分类热度</div>
+        <div class="panel-b">
+          <ul class="rank-list">
+            <li><span class="no">1</span><div class="txt"><b>悬疑短剧</b><span>412 部 · 本周 +6</span></div></li>
+            <li><span class="no">2</span><div class="txt"><b>职业纪录片</b><span>96 部 · 本周 +3</span></div></li>
+            <li><span class="no">3</span><div class="txt"><b>城市观察播客</b><span>58 档 · 本周 +2</span></div></li>
+            <li><span class="no">4</span><div class="txt"><b>通勤 Vlog</b><span>331 条 · 本周 +9</span></div></li>
+            <li><span class="no">5</span><div class="txt"><b>定格与动画短片</b><span>146 部 · 本周 +1</span></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-h">片单合集</div>
+        <div class="panel-b channel-list">
+          <a href="/#related">通勤 30 分钟可听完</a>
+          <a href="/#related">夜班题材纪录片三选</a>
+          <a href="/#related">单集 10 分钟以上的短剧</a>
+          <a href="/#related">小成本拍摄幕后合集</a>
+          <a href="/#related">乡土跟拍四年以上</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="site">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="logo-text">91次网<small>VIDEO HUB</small></span>
+        <p>把短剧、纪录片、播客与 Vlog 放在同一张片单里的视频社区，条目按类型、更新节奏和制作规格整理，帮你在有限时间里选对内容。</p>
+      </div>
+      <div class="foot-col">
+        <h4>频道</h4>
+        <a href="/#channels">悬疑短剧</a>
+        <a href="/#channels">乡土纪录片</a>
+        <a href="/#channels">城市观察播客</a>
+        <a href="/#channels">通勤 Vlog</a>
+      </div>
+      <div class="foot-col">
+        <h4>内容</h4>
+        <a href="/#featured">精选条目</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#timeline">条目时间线</a>
+      </div>
+      <div class="foot-col">
+        <h4>社区</h4>
+        <a href="/#community">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#related">延伸方向</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 91次网 · 条目信息与评分为社区示例数据，实际以条目页为准</span>
+      <span>内容更新于 2026 年 11 月 25 日</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var btn = document.getElementById('qbtn');
+  var status = document.getElementById('qstatus');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cards .card'));
+  var sections = ['overview','featured','latest','channels','deep','guide','faq','community','news','related','timeline'];
+
+  function reset(){
+    cards.forEach(function(c){ c.style.display = ''; });
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.style.display = '';
+    });
+    status.classList.remove('on');
+    status.textContent = '';
+  }
+
+  function run(){
+    var kw = (q.value || '').trim().toLowerCase();
+    if (!kw){ reset(); return; }
+    var hits = 0;
+    cards.forEach(function(c){
+      var txt = (c.textContent || '').toLowerCase();
+      var ok = txt.indexOf(kw) !== -1;
+      c.style.display = ok ? '' : 'none';
+      if (ok) hits++;
+    });
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el) return;
+      var txt = (el.textContent || '').toLowerCase();
+      var ok = txt.indexOf(kw) !== -1;
+      el.style.display = ok ? '' : 'none';
+    });
+    status.classList.add('on');
+    if (hits === 0){
+      status.textContent = '没有找到包含「' + q.value.trim() + '」的条目，试试“短剧”“纪录片”“播客”“骑行”等更短的关键词。';
+    } else {
+      status.textContent = '找到 ' + hits + ' 个相关条目，已隐藏其余内容；清空搜索框可恢复全部。';
+    }
+  }
+
+  btn.addEventListener('click', run);
+  q.addEventListener('input', function(){ if (!q.value.trim()) reset(); });
+  q.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); run(); } });
+})();
+</script>
+</body>
+  </html>
